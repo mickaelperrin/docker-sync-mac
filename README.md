@@ -14,7 +14,7 @@ the next sync runs.
 This project attempts to provide a bi-directionnal syncing between files on the Mac host and a not mounted
 folder directly in the container, by using:
  
-- a derived version of docker-osx-dev` to provide syncing from the mac to the container,
+- a derived version of `docker-osx-dev` to provide syncing from the mac to the container,
 - a container based on [mickaelperrin/lsyncd](https://hub.docker.com/r/mickaelperrin/lsyncd) to provide syncing from the container to the mac.
 
 Configuration is not transparent like with `dinghy` or `docker-osx-dev`. It uses mainly :
@@ -35,7 +35,9 @@ How to use this project
 -----------------------
 
 1/ Be sure that dinghy is running
-2/ Launch the containers and the sync daemon by running the `start-container-and-sync.sh` 
+
+2/ Launch the containers and the sync daemon by running the `start-container-and-sync.sh`
+ 
 3/ Launch the test script `test.sh` which perform some basic operation on the host and in a contaier to show how
 sync works.
 
