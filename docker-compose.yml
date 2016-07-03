@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  nginx:
+    build: ./nginx
+    environment:
+    - VIRTUAL_HOST=www.test.docker
+    - VIRTUAL_PORT=80
+    volumes:
+    - ./src:/src.mounted
+    - /usr/share/nginx/html
+  lsyncd:
+    image: mickaelperrin/lsyncd
+    environment:
+    - SOURCES=/usr/share/nginx/html
+    - DESTINATIONS=/src.mounted
+    - EXCLUDES=.git
+    volumes_from:
+    - nginx
+
+#rsync:
+#- ./src:test_nginx_1:/usr/share/nginx/html
